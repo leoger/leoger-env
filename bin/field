@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Shortcut for `awk '{print $1}'` and similar
+
+if [[ "$1" =~ [0-9]+ ]]; then
+    awk "{print \$$1}"
+else
+    echo "Invalid field number: $1"
+    exit 1
+fi
